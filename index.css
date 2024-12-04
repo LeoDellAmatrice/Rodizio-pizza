@@ -1,10 +1,22 @@
+@font-face {
+    font-family: 'Barlow';
+    src: url(fonts/BarlowCondensed-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Barlow';
+    color: white;
 }
+
+
+
+/* Cabeçalho */
 
 header {
     background-color: #ac2222;
+    height: 20vh;
     padding: 10px;
 }
 
@@ -20,7 +32,7 @@ header {
     align-items: center;
 
     & img {
-        width: 140px;
+        width: 100px;
         border-radius: 50%;
         border-color: black !important;
         border: solid;
@@ -28,15 +40,19 @@ header {
 }
 
 #botoes-header {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    display: flex;
+    gap: 10px;
+    text-wrap: nowrap;
+    margin: 0 20px;
+    justify-content: space-between;
+    align-items: center;
 
     & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-decoration: none;
         text-align: center;
-    }
-
-    & button {
         padding: 10px 20px;
         background-color: #caaa54;
         color: #fff;
@@ -44,13 +60,102 @@ header {
         border-radius: 20px;
         cursor: pointer;
         margin: 5px 0 5px 0;
-    } 
+        transition: 300ms;
+        font-size: 18px;
+    }
+}
+
+#botoes-header a:hover {
+    background-color: #ad934d;
+    transform: scale(1.05);
 }
 
 #busca-header {
     flex: 1;
     display: flex;
-    gap: 10px;
+    gap: 6px;
     justify-content: center;
     align-items: center;
+
+    & input[type="text"] {
+        width: 200px;
+        padding: 8px 15px;
+        font-size: 18px;
+        border-radius: 20px 3px 3px 20px;
+        border: solid 2px #caaa54;
+        background-color: #fff;
+    }
+
+    & button {
+        padding: 10px 20px;
+        background-color: #caaa54;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        border-radius: 3px 20px 20px 3px;
+        cursor: pointer;
+    }
+}
+
+
+/* Corpo da pagina */
+
+main {
+    background-color: #caaa54;
+    padding: 20px 40px;
+    min-height: 60vh;
+}
+
+#title {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 40px;
+}
+
+#opcoes-inicio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    & a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: #ac2222;
+        padding: 20px;
+        border-radius: 20px;
+        width: 200px;
+        transition: 300ms;
+        & img {
+            width: 130px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+#opcoes-inicio a:hover {
+    background-color: #991a1a;
+    transform: scale(1.05);
+}
+
+#sobre-nos {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #ac2222;
+    border-radius: 20px;
+
+}
+
+/* Footer */
+
+footer {
+    background-color: #ac2222;
+    padding: 20px 30px;
+    text-align: center;
+    color: #fff;
 }
